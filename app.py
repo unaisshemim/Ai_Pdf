@@ -80,7 +80,7 @@ def handle_userinput(user_question):
 
 def main():
     load_dotenv()
-    st.set_page_config(page_title="Ask Questions here", page_icon=":books:")
+    st.set_page_config(page_title="Ask Questions here", page_icon="./assets/logo.png")
     st.write(css, unsafe_allow_html=True)
 
     items = get_data()
@@ -89,9 +89,11 @@ def main():
 
     with st.form("subject_form"):
         col1, col2 = st.columns(2)
-        col1.selectbox("Select Subject: ", subjects, key="subjects_class")
+        with col1:
+            subject_box=st.selectbox("Select Subject: ", subjects, key="subjects_class", index=0)
 
-        chapter_sub = col2.selectbox("Select Chapter: ", chapter_of_subjects, key="chapter_list")
+        with col2:
+            chapter_sub = st.selectbox("Select Chapter: ", chapter_of_subjects, key="chapter_list", index=0)
 
         # Find the selected chapter details
         selected_chapter_details = find_selected_chapter_details(items, chapter_sub)
@@ -114,10 +116,11 @@ def main():
         if user_question:
             handle_userinput(user_question)
     else:
-        st.text("Please start by selecting a subject and clicking 'Start'.")
+        st.text("Press 'Start'.")
 
     with st.sidebar:
         st.image("./assets/logo.png")
+        st.markdown('<div style="display: flex; justify-content: center;">QF Innovate</div>', unsafe_allow_html=True)
 
 if __name__ == '__main__':
     main()
