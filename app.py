@@ -21,6 +21,16 @@ def get_data():
     items = list(items)  # make hashable for st.cache_data
     return items
 
+def collect_data(items):
+    for item in items:
+        st.write(f"Board: {item['board']}")
+        st.write(f"Class: {item['class']} ")
+
+    subjects = [item['subject'] for item in items]
+    chapter_of_subjects = [chapters_subject['chapter'] for chapters_subject in items[0]['contents']]
+
+    return subjects, chapter_of_subjects
+
 def get_text_chunks(raw_text):
     text_splitter = CharacterTextSplitter(
         separator="\n",
@@ -69,39 +79,37 @@ def main():
 
     items = get_data()
 
-    # Print results.
-    for item in items:
-        st.write(f"Board: {item['board']}")
-        st.write(f"Class: {item['class']} ")
-        subjects = [item['subject'] for item in items]
-        chapter_of_subjects = [chapters_subject['chapter'] for chapters_subject in items[0]['contents']]
+    subjects, chapter_of_subjects = collect_data(items)
 
-    col1, col2 = st.columns(2)
-    col1.selectbox("Select Subject: ",subjects , key="subjects_class")
-    chapter_sub=col2.selectbox("Select Chapter: ",chapter_of_subjects , key="chapter_list")
+    with st.form("subject_form"):
+        col1, col2 = st.columns(2)
+        col1.selectbox("Select Subject: ",subjects , key="subjects_class")
+
+
+        chapter_sub=col2.selectbox("Select Chapter: ",chapter_of_subjects , key="chapter_list")
     
-    # Find the selected chapter details
-    selected_chapter_details = None
-    for chapters_contents in items[0]['contents']:
-        if chapters_contents['chapter'] == chapter_sub:
-            selected_chapter_details = chapters_contents['content']
+        # Find the selected chapter details
+        selected_chapter_details = None
+        for chapters_contents in items[0]['contents']:
+            if chapters_contents['chapter'] == chapter_sub:
+                selected_chapter_details = chapters_contents['content']
+        # Store the selected chapter details in raw_text
+        raw_text = json.dumps(selected_chapter_details, indent=2)
 
-    # Store the selected chapter details in raw_text
-    raw_text = json.dumps(selected_chapter_details, indent=2)
-
-    
-    st.header("chat with multiple pdfs :books:")
-    user_question = st.text_input("Ask some questions")
-
-    if user_question:
-        handle_userinput(user_question)
-
-    with st.sidebar:
-        if st.button("process"):
+        submitted = st.form_submit_button("Start")
+        if submitted:
             with st.spinner("Processing"):
                 text_chunks = get_text_chunks(raw_text)
                 vector_store = get_vector_store(text_chunks)
                 st.session_state.conversation = get_conversation_chain(vector_store)
+
+    
+    st.header("chat with the chapter :books:")
+    user_question = st.text_input("Ask some questions")
+    if user_question:
+        handle_userinput(user_question)
+
+    with st.sidebar:
 
         st.image("https://static.toiimg.com/photo/msid-66081026,width-96,height-65.cms")
 
