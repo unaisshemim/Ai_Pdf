@@ -1,0 +1,529 @@
+{
+  "_id": {
+    "$oid": "65a60efbb9573ad016486879"
+  },
+  "subect": "Physics",
+  "class": "10",
+  "board": "kerala",
+  "contents": [
+    {
+      "chapter": "Effects of Electric Current",
+      "content": [
+        {
+          "title": "Heating Effect of electric Current",
+          "description": "Phenomenon where electrical energy is converted into heat energy when an electric current passes through a conductor."
+        },
+        {
+          "title": "James Prescott Joule and Joule's Law",
+          "description": "Joule's Law of Heating states that the heat produced in a conductor is directly proportional to the square of the current passing through it, the resistance of the conductor, and the time for which the current flows."
+        },
+        {
+          "title": "Arrangement of Resistors in Circuits",
+          "description": "The arrangement of resistors in circuits refers to the specific configuration in which resistive components are connected, influencing the overall resistance and current flow in the circuit."
+        },
+        {
+          "title": "Series Connection",
+          "description": "When resistors are connected in series, they're lined up like a chain. The total resistance is simply the sum of each individual resistor's resistance."
+        },
+        {
+          "title": "Parallel Connection",
+          "description": "The total current in the circuit is the sum of current throgh all the branch circuits. In this setup, the voltage across each resistor is the same, but the total current flowing through the group is the sum of the currents through each resistor"
+        },
+        {
+          "title": "Colour Code of Resistors",
+          "description": "Resistors often have bands of different colors, and each color represents a specific digit or value. The first two rings indicate the two digits, the third one indicated the number of zeroes and the fourth ring indicates tolerance."
+        },
+        {
+          "title": "Heating Effects of Electricity- Uses",
+          "description": "Elctric Heaters, Cooking Appliances, Bulbs, Safety Fuse"
+        },
+        {
+          "title": "Safety Fuse",
+          "description": "A safety fuse is like an electrical superhero that helps protect our homes and devices from potential dangers"
+        },
+        {
+          "title": "Appliances without Heating Coil",
+          "description": "Microwave Oven and induction cookers are appliances which do not use a heating coil."
+        },
+        {
+          "title": "Short Circuit and Overloading",
+          "description": "If the positive and negative terminals of a battery or the two wires from the mains come into contact without the presence of a resistance in between, they are said to be short circuited"
+        },
+        {
+          "title": "Gauge, Amperage",
+          "description": "Gauge:Reciprocal of the diameter of a conductor, Amperage:Ratio of the power of an equipment to the voltage applied."
+        },
+        {
+          "title": "Electric Power",
+          "description": "The amount of energy consumed by an electrical appliance in unit time is its power"
+        },
+        {
+          "title": "Lighting Effect of Electric Current",
+          "description": "The lighting effect of electric current is what makes bulbs and LEDs shine. When electricity flows through a filament or semiconductor in a light bulb, it gets so excited that it produces light."
+        },
+        {
+          "title": "Incandescent lamps",
+          "description": "Incandescent lamps are old-fashioned light bulbs that work by passing electricity through a wire filament, which gets so hot that it produces light. They are not very energy-efficient."
+        },
+        {
+          "title": "Why Inert gases/Nitrogen is used in Incandescent Lamps",
+          "description": "Nitrogen is used in incandescent lamps to prevent the filament from burning up. When the filament gets hot, it reacts with oxygen, but if we fill the bulb with nitrogen, it helps to slow down this reaction, extending the life of the bulb"
+        },
+        {
+          "title": "Discharge Lamps",
+          "description": "Glass tubes fitted with two electrodes, emit light as a result of discharge of electricity through the gases filled in the tubes."
+        },
+        {
+          "title": "Light Emitting Diode Bulb",
+          "description": "LED bulbs are energy-efficient light sources. They use light-emitting diodes (LEDs) to produce light. They last longer, use less energy, and come in various shapes and sizes, making them a more modern and eco-friendly choice compared to traditional incandescent bulbs."
+        },
+        {
+          "title": "Construction of LED's",
+          "description": "Simple Construction of a LED bulb"
+        },
+        {
+          "title": "Disposing LED Bulbs Scientifically",
+          "description": "Separate the plastic, electronic and metal components."
+        }
+      ]
+    },
+    {
+      "chapter": "Magenetic Effect of Electric Current",
+      "content": [
+        {
+          "title": "Magnetic Effect of electric current",
+          "description": "The magnetic effect of an electric current is the ability of a flowing electric current to create a magnetic field around it. When an electric current passes through a conductor, it produces a magnetic field."
+        },
+        {
+          "title": "Hans Christian Oersted",
+          "description": "Famous Scientist, Magnetic needle experiment, Begining of technology behind the devices used today like radio,TV, and fibre optics"
+        },
+        {
+          "title": "Right Hand Thumb Rule of James Clark",
+          "description": "Thumb points the direction of the current, then the direction in which the other fingers encircle the conductor gives the direction of the magnetic field"
+        },
+        {
+          "title": "Solenoid",
+          "description": "Its an insulated wire wound in the shape of a helix, used to make use of the magnetic effect of electricity. North and South pole of solenoids"
+        },
+        {
+          "title": "Use of Magnetic effect of electricity",
+          "description": "Fan, Motor, Flemings left hand rule"
+        },
+        {
+          "title": "Flemings left hand rule",
+          "description": "Fleming's Left-Hand Rule is a principle used in physics to determine the direction of force, magnetic field, and current in electric motors"
+        },
+        {
+          "title": "Motor Principle",
+          "description": " when an electric current flows through a conductor placed in a magnetic field, a force is exerted on the conductor, causing it to move."
+        },
+        {
+          "title": "Electric Motor",
+          "description": "Parts of and electric motor"
+        },
+        {
+          "title": "Armature",
+          "description": "Metallic coil wound round a soft iron core- used in motors"
+        },
+        {
+          "title": "Split ring Commutator",
+          "description": "A split-ring commutator is a component in some electric motors that helps reverse the direction of the current in the coil winding"
+        },
+        {
+          "title": "Moving Coil Loud Speaker",
+          "description": "The electric pulses from a microphone are strengthened using an amplifier and sent through the voice coil of a loud speaker"
+        }
+      ]
+    },
+    {
+      "chapter": "Electromagnetic Induction",
+      "content": [
+        {
+          "title": "Electrical energy",
+          "description": "Can be converted into light, magnetic, heat energy and vice versa. Bar Magnet, Solenoid, Galvanometer experiment."
+        },
+        {
+          "title": "Electromagnetic Induction",
+          "description": "Whenever there is a change in the magnetic flux linked with a coil, an emf is induced in the coil. this phenmonon is called electro-magnetic induction"
+        },
+        {
+          "title": "Galvanometer",
+          "description": "Device used to understand magnitude and direction of a small current."
+        },
+        {
+          "title": "Michael Faraday",
+          "description": "Scientist, showed that a current carrying conductor kept in a magnetic field can move."
+        },
+        {
+          "title": "Flemings right hand rule",
+          "description": "Fleming's Right-Hand Rule is a principle used in physics to determine the direction of induced current or voltage in a conductor moving through a magnetic field."
+        },
+        {
+          "title": "AC Current",
+          "description": "AC (Alternating Current) is an electric current that periodically reverses direction. In AC, the flow of electric charge regularly changes its direction, typically in a sinusoidal (wave-like) pattern."
+        },
+        {
+          "title": "DC Current",
+          "description": "DC (Direct Current) is an electric current that flows in one direction. In a DC circuit, electric charge consistently moves from the positive (+) terminal to the negative (-) terminal of a voltage source, such as a battery or a DC power supply."
+        },
+        {
+          "title": "Genarator",
+          "description": "A generator is a device that converts mechanical energy into electrical energy. It does this through the process of electromagnetic induction."
+        },
+        {
+          "title": "Period T",
+          "description": "Time taken for a full rotation of the armature coil"
+        },
+        {
+          "title": "AC Genarator",
+          "description": "Parts: Field Magnet, Armature, Sliprings, Brushes"
+        },
+        {
+          "title": "DC Genarators",
+          "description": "Genarator that genarates DC current"
+        },
+        {
+          "title": "Mutual Induction",
+          "description": "Primary coil and secondary coil: the coil into which we give current for the production of magnetic field is the primary coil and the coil in which induces emf is genarated is the secondary coil"
+        },
+        {
+          "title": "Transformer",
+          "description": "Device used for increasing or decreasing the voltage of an AC witohut any change in the electric power"
+        },
+        {
+          "title": "Step up transformer",
+          "description": "Thick wires used in primary, less coil in primary and opposite in secondary"
+        },
+        {
+          "title": "Step Down transformer",
+          "description": "Opposite of step up transformers, Power = Voltage*Current"
+        },
+        {
+          "title": "Self Induction",
+          "description": "Self-induction occurs when a changing current in a conductor induces an electromotive force (EMF or voltage) in the same conductor."
+        },
+        {
+          "title": "Importance of soft iron",
+          "description": "Electromagnets, Transformers, Inductors, Magnetic Shielding"
+        },
+        {
+          "title": "Inductor",
+          "description": "Insulated copper wire wound in a helical shape. used to oppose the changes in electric current in a circuit"
+        },
+        {
+          "title": "Moving Coil MicroPhone",
+          "description": "A moving coil microphone is a type of dynamic microphone commonly used for capturing audio in various applications. working of moving coil microphone"
+        },
+        {
+          "title": "Types of microphone",
+          "description": "Carbon Microphone, Crystal and Ceramic microphone, Ribbon Microphone, Capacitor microphones"
+        },
+        {
+          "title": "Power transmission and distribution",
+          "description": "Power Generation, Step-Up Transformers, Transmission Lines, Step-Down Transformers, Distribution Lines, Distribution Transformers, End Users"
+        },
+        {
+          "title": "Single Phase vs Three phase genarator",
+          "description": "Single-phase generators produce a single, alternating current waveform, commonly used in residential settings for simpler applications. They are suitable for powering household appliances and small tools. On the other hand, three-phase generators produce three overlapping waveforms with a phase offset, providing a more balanced and efficient power delivery."
+        },
+        {
+          "title": "Household Electrification",
+          "description": "Where the current reaches first in a house hold, flow of electricity in a house"
+        },
+        {
+          "title": "Watt-hour Meter",
+          "description": "device used to measure electrical energy, energy in kilowatt hour = (power in watt * time in hour)/1000"
+        },
+        {
+          "title": "Safety measures in household electrification",
+          "description": "Safety fuse, MCB, Three pin plug"
+        },
+        {
+          "title": "Earthing",
+          "description": "Earthing of wires, also known as grounding, is a safety measure in electrical systems. It involves connecting the conducting parts of electrical equipment or installations to the Earth or a grounding system."
+        },
+        {
+          "title": "Circuit Breaker",
+          "description": "How circuit breakers work"
+        },
+        {
+          "title": "Electric shock",
+          "description": "An electric shock occurs when a person comes into contact with an electrical energy source, such as a live wire or an electrical appliance."
+        },
+        {
+          "title": "Preautions while handling electric devices",
+          "description": "Handling electric devices safely"
+        },
+        {
+          "title": "First aid to give in case of electric shock",
+          "description": "First aid should be given after disconnecting the victim for the electric wire, step to execute"
+        },
+        {
+          "title": "Making House hold circuit",
+          "description": "materials needed, devices needed, precautions"
+        }
+      ]
+    },
+    {
+      "chapter": "Reflection of Light",
+      "content": [
+        {
+          "title": "Incident, reflected ray",
+          "description": "When light hits a surface, the incoming light is the incident ray. The ray that bounces back off the surface is the reflective ray. It's like when you throw a ball against a wall, the way it comes back is like the reflective ray of light."
+        },
+        {
+          "title": "Regular and irregular reflection",
+          "description": "Regular reflection is like a mirror, where light reflects uniformly and you see a clear image. Irregular reflection is like when light hits a rough surface, scattering in different directions, and you see a blurry or scattered reflection, like a crumpled foil."
+        },
+        {
+          "title": "Image formation by a plane mirror",
+          "description": "laws of reflection, distance from the object to the mirror"
+        },
+        {
+          "title": "Multiple reflection and Image formation",
+          "description": "Arrange two mirrors perpendicular to each other and see how they behave"
+        },
+        {
+          "title": "Field of view of mirrors and the nature of images",
+          "description": "The field of view of a mirror is what you can see in it. In flat mirrors, the field of view is everything you can see in the mirror. The nature of images in mirrors is virtual, meaning they look like they're behind the mirror."
+        },
+        {
+          "title": "Mirror equation and focal length",
+          "description": "mirror equation"
+        },
+        {
+          "title": "Types of mirrors and their uses",
+          "description": "uses of various mirrors"
+        }
+      ]
+    },
+    {
+      "chapter": "Refraction of Light",
+      "content": [
+        {
+          "title": "Bending of light in water",
+          "description": "reason, causes, uses"
+        },
+        {
+          "title": "Speed of light and optical density",
+          "description": "medium influences the speed of light that passes through"
+        },
+        {
+          "title": "Refraction of light",
+          "description": "Refraction is when light bends as it passes through different materials, like glass or water."
+        },
+        {
+          "title": "Refraction in different media",
+          "description": "When light moves from air to water, it bends towards the normal (an imaginary line perpendicular to the surface). If it goes from water to air, it bends away from the normal."
+        },
+        {
+          "title": "Laws of refraction",
+          "description": "The incident ray, the refracted ray, and the normal (perpendicular line) at the point of incidence all lie in the same plane."
+        },
+        {
+          "title": "Snells Law",
+          "description": "The ratio of the sine of the angle of incidence to the sine of the angle of refraction is constant for a given pair of media. This is known as Snell's Law"
+        },
+        {
+          "title": "Total Internal Reflection",
+          "description": "Total internal reflection happens when light inside a denser medium (like water or glass) tries to go into a less dense medium (like air) at an angle bigger than the critical angle. Instead of going out, the light reflects back inside, like when a swimming pool surface acts like a mirror underwater."
+        },
+        {
+          "title": "critical angle",
+          "description": "definition, crtical angle of water"
+        },
+        {
+          "title": "Lens",
+          "description": "Optic centre, Centre of curvature, principal axis, principal focus of concave and convex lens "
+        },
+        {
+          "title": "Focal Length of lenses",
+          "description": "How image forms whle using differnt lenses"
+        },
+        {
+          "title": "Ray diagram of formation of images by lenses",
+          "description": "Object in focus, at infinity, beyond 2F, at 2F, between F and 2F, between F and lens"
+        },
+        {
+          "title": "Images formed by concave lenses",
+          "description": "Object in focus, at infinity, beyond 2F, at 2F, between F and 2F, between F and lens"
+        },
+        {
+          "title": "Magnification",
+          "description": "Ratio of height of the image to the height of the object"
+        },
+        {
+          "title": "Power of a lens",
+          "description": "reciprocal of focal length expresses in metres. unit is dioptre"
+        },
+        {
+          "title": "Atmospheric refraction",
+          "description": "reason, causes, uses"
+        }
+      ]
+    },
+    {
+      "chapter": "Vision and the world of colours",
+      "content": [
+        {
+          "title": "Eye and vision",
+          "description": "How we see things?, nesr point of eye. Far point of the eye"
+        },
+        {
+          "title": "Power of accomdation",
+          "description": "The ability of the eye to form an image on the retina by adjusting the focal length of of the lens in the eye."
+        },
+        {
+          "title": "Hypermetropia",
+          "description": "reason,  remedy"
+        },
+        {
+          "title": "Myopia",
+          "description": "reason,  remedy"
+        },
+        {
+          "title": "presbyopia",
+          "description": "Presbyopia is when your eyes have difficulty focusing on close objects, usually as you get older"
+        },
+        {
+          "title": "#D Vision",
+          "description": "why a single eye is not enough?"
+        },
+        {
+          "title": "Dispersion of light",
+          "description": "how dispersion works, uses, various colours, Rainbow"
+        },
+        {
+          "title": "Rainbow",
+          "description": "Phenomenon behind rainbow, COlour seen at the top edge, and bottom"
+        },
+        {
+          "title": "Primary and Secondary colors",
+          "description": "RGB colours, and secondary colours"
+        },
+        {
+          "title": "Recombination of colors",
+          "description": "What happens when we pass light through two prisms"
+        },
+        {
+          "title": "Persistence of vision",
+          "description": "Persistence of vision is why we see continuous motion in movies or animations"
+        },
+        {
+          "title": "Scattering of light",
+          "description": "Scattering of light is when light changes direction due to interactions with small particles or irregularities in a medium."
+        },
+        {
+          "title": "Scattering and wavelength",
+          "description": "Rate of scattering and the size of the particles are interrelated. As the size of the particle increases, the rate of scattering also increases"
+        },
+        {
+          "title": "Colours of the rising and setting sun",
+          "description": "Causes, reason"
+        },
+        {
+          "title": "Tyndal Effect",
+          "description": "The Tyndall effect is when light scatters in a colloidal mixture or a fluid with small particles. It makes the scattered light visible, like when you see a beam of light through dusty air or a cloudy liquid."
+        },
+        {
+          "title": "Light Pollution",
+          "description": "reason, causes, remedy"
+        }
+      ]
+    },
+    {
+      "chapter": "Energy Management",
+      "content": [
+        {
+          "title": "Sources Of Energy",
+          "description": "Different Sources Of Energy"
+        },
+        {
+          "title": "Fuels",
+          "description": "Types of fuels, Combustion"
+        },
+        {
+          "title": "Fossil Fuel",
+          "description": "Varieties of fossil fuels, how are they made, causes, remedies"
+        },
+        {
+          "title": "Coal",
+          "description": "Varieties, Uses,causes,"
+        },
+        {
+          "title": "Biomass",
+          "description": "firewood, cow dung, causes, uses"
+        },
+        {
+          "title": "Biogas",
+          "description": "how its made, uses, advantages"
+        },
+        {
+          "title": "Fuel Effeciency",
+          "description": "effeciency of different fuels"
+        },
+        {
+          "title": "Calrific Value",
+          "description": "amount of heat liberated by completed combustion of 1 kg of fuels"
+        },
+        {
+          "title": "Hydrogen and hydrogen fuel cells",
+          "description": "Causes, reason, why hydrogen is not used as a domestic fuel"
+        },
+        {
+          "title": "Hydroelectric power stations",
+          "description": "uses, causes advantages and disadvantages"
+        },
+        {
+          "title": "Thermal power stations",
+          "description": "uses, causes advantages and disadvantages, fuels used, mechaninsm"
+        },
+        {
+          "title": "Solar Energy",
+          "description": "How electricity is made from solar energy, solar panels, other use cases"
+        },
+        {
+          "title": "heat energy from solar energy",
+          "description": "Solar cooker, solar water heater, solar thermal power plant"
+        },
+        {
+          "title": "Energy from wind",
+          "description": "How wind energy can be used, advantages and disadvantages"
+        },
+        {
+          "title": "Energy from sea",
+          "description": "how can it be used, energy from waves, mecahnism of ocean thermal energy, where is it implemented"
+        },
+        {
+          "title": "Geo Thermal Energy",
+          "description": "Wokring mechanism, advantages and disadvantages"
+        },
+        {
+          "title": "Nuclear energy",
+          "description": "Nuclear fissio, nuclear fusion, advantages and disadvantages, E=mc^2"
+        },
+        {
+          "title": "Nuclear power plant",
+          "description": "mechanism, advantages and disadvantages, Nuclear Pollution"
+        },
+        {
+          "title": "Renewable sources of energy",
+          "description": "Green energy, advantages and disadvantages, why people is not using these"
+        },
+        {
+          "title": "Energy Crisis",
+          "description": "Consequences of increasing deman but decreasing availability"
+        },
+        {
+          "title": "Loss of energy through water",
+          "description": "how it can be stopped"
+        },
+        {
+          "title": "LDR(Light Dependent Resistor)",
+          "description": "resistor that works based on the intensity of light, uses, how energy can be saved this way"
+        }
+      ]
+    }
+  ]
+}
