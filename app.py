@@ -28,8 +28,14 @@ def collect_data(items):
 
     subjects = [item['subject'] for item in items]
     chapter_of_subjects = [chapters_subject['chapter'] for chapters_subject in items[0]['contents']]
-
     return subjects, chapter_of_subjects
+
+def find_selected_chapter_details(items, chapter_sub):
+    selected_chapter_details = None
+    for chapters_contents in items[0]['contents']:
+        if chapters_contents['chapter'] == chapter_sub:
+            selected_chapter_details = chapters_contents['content']
+    return selected_chapter_details
 
 def get_text_chunks(raw_text):
     text_splitter = CharacterTextSplitter(
@@ -83,16 +89,12 @@ def main():
 
     with st.form("subject_form"):
         col1, col2 = st.columns(2)
-        col1.selectbox("Select Subject: ",subjects , key="subjects_class")
+        col1.selectbox("Select Subject: ", subjects, key="subjects_class")
 
+        chapter_sub = col2.selectbox("Select Chapter: ", chapter_of_subjects, key="chapter_list")
 
-        chapter_sub=col2.selectbox("Select Chapter: ",chapter_of_subjects , key="chapter_list")
-    
         # Find the selected chapter details
-        selected_chapter_details = None
-        for chapters_contents in items[0]['contents']:
-            if chapters_contents['chapter'] == chapter_sub:
-                selected_chapter_details = chapters_contents['content']
+        selected_chapter_details = find_selected_chapter_details(items, chapter_sub)
         # Store the selected chapter details in raw_text
         raw_text = json.dumps(selected_chapter_details, indent=2)
 
@@ -102,16 +104,20 @@ def main():
                 text_chunks = get_text_chunks(raw_text)
                 vector_store = get_vector_store(text_chunks)
                 st.session_state.conversation = get_conversation_chain(vector_store)
+                st.session_state.process_started = True  # Flag to indicate the process has started
 
-    
     st.header("chat with the chapter :books:")
-    user_question = st.text_input("Ask some questions")
-    if user_question:
-        handle_userinput(user_question)
+
+    # Check if the process has started before enabling the text input
+    if st.session_state.get("process_started", False):
+        user_question = st.text_input("Ask some questions")
+        if user_question:
+            handle_userinput(user_question)
+    else:
+        st.text("Please start by selecting a subject and clicking 'Start'.")
 
     with st.sidebar:
-
-        st.image("https://static.toiimg.com/photo/msid-66081026,width-96,height-65.cms")
+        st.image("./assets/logo.png")
 
 if __name__ == '__main__':
     main()

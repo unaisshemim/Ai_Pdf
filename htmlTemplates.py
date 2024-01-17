@@ -23,6 +23,20 @@ css = '''
   padding: 0 1.5rem;
   color: #fff;
 }
+.sidebar-logo {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding-top: 20px; /* Adjust the padding as needed */
+                padding-bottom: 20px; /* Adjust the padding as needed */
+                background-color: #f0f0f0; /* Optional: Add a background color */
+}
+.logo-img {
+    border-radius: 50%;
+    width: 100px; /* Adjust the width as needed */
+    height: 100px; /* Adjust the height as needed */
+    object-fit: cover;
+}
 '''
 
 bot_template = '''
@@ -42,3 +56,4 @@ user_template = '''
     <div class="message">{{MSG}}</div>
 </div>
 '''
+
