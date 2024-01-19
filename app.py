@@ -9,6 +9,7 @@ from langchain.chat_models import ChatOpenAI
 from langchain.memory import ConversationBufferMemory
 from langchain.chains import ConversationalRetrievalChain
 from htmlTemplates import css, bot_template, user_template
+from authentication import *
 
 @st.cache_resource
 def init_connection():
@@ -108,6 +109,7 @@ def main():
 
         submitted = st.form_submit_button("Start")
         if submitted:
+            verify_login()
             with st.spinner("Processing"):
                 text_chunks = get_text_chunks(raw_text)
                 vector_store = get_vector_store(text_chunks)

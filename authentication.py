@@ -36,25 +36,27 @@ def verify_token(code):
         access_token = get_access_token(code)
         user_info = get_user_info(access_token)
         st.session_state["user_info"] = user_info
+        st.session_state["user_name"] = user_info.get("name", "")
         st.success("Logged in successfully!")
     except ValueError as e:
-        st.error(f"Invalid token: {e}")  # Provide specific error details
+        st.error(f"Invalid token: {e}")
 
-def main():
+
+
+def verify_login():
+    user_name = None  # Initialize user_name variable
+
     if "code" not in st.session_state:
         code = login()
         if code:
-            verify_token(code)
+            user_name = verify_token(code)  # Update user_name with the returned value
+            return user_name  # Exit early to avoid displaying the "Login with Google" title
     else:
-        verify_token(st.session_state.code)
+        user_name = verify_token(st.session_state.code)
 
-    if "user_info" in st.session_state:
-        user_info = st.session_state["user_info"]
-        st.title(f"Welcome, {user_info['name']}!")
+    if user_name:
+        st.title(f"Welcome, {user_name}!")
         # Display additional features for logged-in users
     else:
-        st.title("Login with Google")
-        st.markdown(f'<a href="{st.session_state["auth_url"]}" target="_blank">Click here to sign in with Google</a>', unsafe_allow_html=True)
-
-if __name__ == '__main__':
-    main()
+        st.caption("Login with Google")
+        st.markdown(f'<a href="{st.session_state["auth_url"]}" target="_self">Click here to sign in with Google</a>', unsafe_allow_html=True)
