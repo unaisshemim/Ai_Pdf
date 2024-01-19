@@ -30,10 +30,10 @@ def collect_data(items):
     chapter_of_subjects = [chapters_subject['chapter'] for chapters_subject in items[0]['contents']]
     return subjects, chapter_of_subjects
 
-def find_selected_chapter_details(items, chapter_sub):
+def find_selected_chapter_details(items, chapter_box):
     selected_chapter_details = None
     for chapters_contents in items[0]['contents']:
-        if chapters_contents['chapter'] == chapter_sub:
+        if chapters_contents['chapter'] == chapter_box:
             selected_chapter_details = chapters_contents['content']
     return selected_chapter_details
 
@@ -78,9 +78,15 @@ def handle_userinput(user_question):
     else:
         st.write("Conversation object not initialized. Please upload and process PDFs first.")
 
+process_started = False  # Define it globally
+
+def handleChange():
+    global process_started
+    process_started = not process_started
+
 def main():
     load_dotenv()
-    st.set_page_config(page_title="Ask Questions here", page_icon="./assets/logo.png")
+    st.set_page_config(page_title="QF Innovate", page_icon="./assets/logo.png")
     st.write(css, unsafe_allow_html=True)
 
     items = get_data()
@@ -90,13 +96,13 @@ def main():
     with st.form("subject_form"):
         col1, col2 = st.columns(2)
         with col1:
-            subject_box=st.selectbox("Select Subject: ", subjects, key="subjects_class", index=0)
+            subject_box = st.selectbox("Select Subject: ", subjects, key="subjects_class", index=0)
 
         with col2:
-            chapter_sub = st.selectbox("Select Chapter: ", chapter_of_subjects, key="chapter_list", index=0)
+            chapter_box = st.selectbox("Select Chapter: ", chapter_of_subjects, key="chapter_list", index=0)
 
         # Find the selected chapter details
-        selected_chapter_details = find_selected_chapter_details(items, chapter_sub)
+        selected_chapter_details = find_selected_chapter_details(items, chapter_box)
         # Store the selected chapter details in raw_text
         raw_text = json.dumps(selected_chapter_details, indent=2)
 
@@ -106,13 +112,13 @@ def main():
                 text_chunks = get_text_chunks(raw_text)
                 vector_store = get_vector_store(text_chunks)
                 st.session_state.conversation = get_conversation_chain(vector_store)
-                st.session_state.process_started = True  # Flag to indicate the process has started
+                handleChange()  # Toggle the value of process_started
 
     st.header("chat with the chapter :books:")
 
     # Check if the process has started before enabling the text input
-    if st.session_state.get("process_started", False):
-        user_question = st.text_input("Ask some questions")
+    if process_started:
+        user_question = st.text_input("Ask some questions", key="user_question")
         if user_question:
             handle_userinput(user_question)
     else:
@@ -124,3 +130,4 @@ def main():
 
 if __name__ == '__main__':
     main()
+
