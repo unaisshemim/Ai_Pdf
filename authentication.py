@@ -42,7 +42,10 @@ def verify_token(code):
         st.error(f"Invalid token: {e}")
 
 
-
+def navigate_to_google():
+    st.session_state["auth_url"]
+    st.markdown(f'Redirecting to [Google Login]({st.session_state["auth_url"]})...')
+    
 def verify_login():
     user_name = None  # Initialize user_name variable
 
@@ -59,4 +62,6 @@ def verify_login():
         # Display additional features for logged-in users
     else:
         st.caption("Login with Google")
-        st.markdown(f'<a href="{st.session_state["auth_url"]}" target="_self">Click here to sign in with Google</a>', unsafe_allow_html=True)
+        
+        st.markdown(f'<a style="padding:10px;color:red;font-weight:bold;text-decoration:none" href="{st.session_state["auth_url"]}" target="_self"><image style="width:30px; height:30px ;background-color: transparent; margin-right:10px" src="https://banner2.cleanpng.com/20180521/ers/kisspng-google-logo-5b02bbe1d5c6e0.2384399715269058258756.jpg"/>sign in with Google</a>', unsafe_allow_html=True)
+        # st.button("Sign in with Google", on_click=navigate_to_google)

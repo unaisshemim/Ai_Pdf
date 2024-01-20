@@ -131,5 +131,5 @@ def main():
         st.markdown('<div style="display: flex; justify-content: center;">QF Innovate</div>', unsafe_allow_html=True)
 
 if __name__ == '__main__':
-    main()
+        main()
 
