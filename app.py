@@ -58,7 +58,7 @@ def get_vector_store(text_chunks):
 def get_conversation_chain(vector_store):
     openai_api_key = st.secrets["openai"]["api_key"]
 
-    llm = ChatOpenAI(openai_api_key=openai_api_key)
+    llm = ChatOpenAI(openai_api_key=openai_api_key) 
     memory = ConversationBufferMemory(
         memory_key='chat_history', return_messages=True
     )

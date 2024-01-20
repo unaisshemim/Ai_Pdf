@@ -6,7 +6,12 @@ from dotenv import load_dotenv
 # Load environment variables securely
 load_dotenv()  # Load .env file (ensure it's in the same directory)
 google_oauth_secrets = st.secrets["google_oauth"]
-client_id, client_secret = google_oauth_secrets.values()
+# client_id, client_secret = google_oauth_secrets.values()
+
+client_id=st.secrets.google_oauth.client_id
+client_secret=st.secrets.google_oauth.client_secret
+
+
 
 def get_access_token(code):
     url = "https://oauth2.googleapis.com/token"
@@ -14,7 +19,7 @@ def get_access_token(code):
         "code": code,
         "client_id": client_id,
         "client_secret": client_secret,
-        "redirect_uri": "https://studyqf.streamlit.app",  # Adjust redirect_uri if needed
+        "redirect_uri": "http://localhost:8501",  # Adjust redirect_uri if needed
         "grant_type": "authorization_code",
     }
     response = requests.post(url, data=params)
@@ -27,7 +32,7 @@ def get_user_info(access_token):
     return response.json()
 
 def login():
-    auth_url = f"https://accounts.google.com/o/oauth2/v2/auth?client_id={client_id}&response_type=code&scope=openid%20email&redirect_uri=https://studyqf.streamlit.app/"  # Adjust redirect_uri if needed
+    auth_url = f"https://accounts.google.com/o/oauth2/v2/auth?client_id={client_id}&response_type=code&scope=openid%20email&redirect_uri=http://localhost:8501"  # Adjust redirect_uri if needed
     st.session_state["auth_url"] = auth_url
     return st.query_params.get("code")
 
