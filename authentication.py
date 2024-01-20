@@ -14,7 +14,7 @@ def get_access_token(code):
         "code": code,
         "client_id": client_id,
         "client_secret": client_secret,
-        "redirect_uri": "http://localhost:8501",  # Adjust redirect_uri if needed
+        "redirect_uri": "https://studyqf.streamlit.app/",  # Adjust redirect_uri if needed
         "grant_type": "authorization_code",
     }
     response = requests.post(url, data=params)
