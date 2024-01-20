@@ -91,7 +91,7 @@ def main():
     st.set_page_config(page_title="QF Innovate", page_icon="./assets/logo.png")
     st.write(css, unsafe_allow_html=True)
     global process_started
-    process_started=verify_login()  
+    process_started=True  
     items = get_data()
 
     subjects, chapter_of_subjects = collect_data(items)
