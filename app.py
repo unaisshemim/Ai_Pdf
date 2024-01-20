@@ -1,7 +1,6 @@
 import streamlit as st
 import pymongo
 import json
-from dotenv import load_dotenv
 import langchain
 langchain.verbose = False
 from langchain.text_splitter import CharacterTextSplitter
@@ -51,12 +50,14 @@ def get_text_chunks(raw_text):
     return chunks
 
 def get_vector_store(text_chunks):
-    embeddings = OpenAIEmbeddings()
+    openai_api_key = st.secrets["openai"]["api_key"]
+    embeddings = OpenAIEmbeddings(openai_api_key=openai_api_key)
     vectorstore = FAISS.from_texts(texts=text_chunks, embedding=embeddings)
     return vectorstore
 
 def get_conversation_chain(vector_store):
     openai_api_key = st.secrets["openai"]["api_key"]
+
     llm = ChatOpenAI(openai_api_key=openai_api_key)
     memory = ConversationBufferMemory(
         memory_key='chat_history', return_messages=True
