@@ -5,8 +5,8 @@ from dotenv import load_dotenv
 
 # Load environment variables securely
 load_dotenv()  # Load .env file (ensure it's in the same directory)
-client_id = os.environ.get("CLIENT_ID")
-client_secret = os.environ.get("CLIENT_SECRET")
+google_oauth_secrets = st.secrets["google_oauth"]
+client_id, client_secret = google_oauth_secrets.values()
 
 def get_access_token(code):
     url = "https://oauth2.googleapis.com/token"

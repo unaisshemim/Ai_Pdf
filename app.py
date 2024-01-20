@@ -56,7 +56,8 @@ def get_vector_store(text_chunks):
     return vectorstore
 
 def get_conversation_chain(vector_store):
-    llm = ChatOpenAI()
+    openai_api_key = st.secrets["openai"]["api_key"]
+    llm = ChatOpenAI(openai_api_key=openai_api_key)
     memory = ConversationBufferMemory(
         memory_key='chat_history', return_messages=True
     )
@@ -88,7 +89,7 @@ def main():
     load_dotenv()
     st.set_page_config(page_title="QF Innovate", page_icon="./assets/logo.png")
     st.write(css, unsafe_allow_html=True)
-    global process_started;
+    global process_started
     process_started=verify_login()  
     items = get_data()
 
@@ -108,9 +109,6 @@ def main():
         raw_text = json.dumps(selected_chapter_details, indent=2)
 
         submitted = st.form_submit_button("Start")
-        
-
-  
         
         if submitted:
             with st.spinner("Processing"):
