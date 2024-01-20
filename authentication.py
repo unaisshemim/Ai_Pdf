@@ -53,15 +53,16 @@ def verify_login():
         code = login()
         if code:
             user_name = verify_token(code)  # Update user_name with the returned value
-            return user_name  # Exit early to avoid displaying the "Login with Google" title
+            return True  # Exit early to avoid displaying the "Login with Google" title
     else:
         user_name = verify_token(st.session_state.code)
 
     if user_name:
         st.title(f"Welcome, {user_name}!")
+        return True
         # Display additional features for logged-in users
     else:
         st.caption("Login with Google")
-        
         st.markdown(f'<a style="padding:10px;color:red;font-weight:bold;text-decoration:none" href="{st.session_state["auth_url"]}" target="_self"><image style="width:30px; height:30px ;background-color: transparent; margin-right:10px" src="https://banner2.cleanpng.com/20180521/ers/kisspng-google-logo-5b02bbe1d5c6e0.2384399715269058258756.jpg"/>sign in with Google</a>', unsafe_allow_html=True)
         # st.button("Sign in with Google", on_click=navigate_to_google)
+        return False

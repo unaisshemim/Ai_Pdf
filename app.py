@@ -2,6 +2,8 @@ import streamlit as st
 import pymongo
 import json
 from dotenv import load_dotenv
+import langchain
+langchain.verbose = False
 from langchain.text_splitter import CharacterTextSplitter
 from langchain.embeddings import OpenAIEmbeddings
 from langchain.vectorstores import FAISS
@@ -79,21 +81,19 @@ def handle_userinput(user_question):
     else:
         st.write("Conversation object not initialized. Please upload and process PDFs first.")
 
-process_started = False  # Define it globally
+ # Define it globally
 
-def handleChange():
-    global process_started
-    process_started = not process_started
 
 def main():
     load_dotenv()
     st.set_page_config(page_title="QF Innovate", page_icon="./assets/logo.png")
     st.write(css, unsafe_allow_html=True)
-
+    global process_started;
+    process_started=verify_login()  
     items = get_data()
 
     subjects, chapter_of_subjects = collect_data(items)
-
+    
     with st.form("subject_form"):
         col1, col2 = st.columns(2)
         with col1:
@@ -108,18 +108,22 @@ def main():
         raw_text = json.dumps(selected_chapter_details, indent=2)
 
         submitted = st.form_submit_button("Start")
+        
+
+  
+        
         if submitted:
-            verify_login()
             with st.spinner("Processing"):
                 text_chunks = get_text_chunks(raw_text)
                 vector_store = get_vector_store(text_chunks)
                 st.session_state.conversation = get_conversation_chain(vector_store)
-                handleChange()  # Toggle the value of process_started
-
+                 # Toggle the value of process_started
+        
     st.header("chat with the chapter :books:")
-
+    
     # Check if the process has started before enabling the text input
-    if process_started:
+
+    if process_started :
         user_question = st.text_input("Ask some questions", key="user_question")
         if user_question:
             handle_userinput(user_question)
